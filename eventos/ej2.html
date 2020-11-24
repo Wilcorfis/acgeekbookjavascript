@@ -1,0 +1,32 @@
+<!--
+    EJERCICIO 2
+¿Cómo te llamas?
+Crear una página HTML con un input de tipo texto para introducir
+ tu nombre y un botón. Al pinchar sobre el botón, imprimir en la
+  consola el mensaje 'Hola ', con el nombre que aparece en el input de texto.
+Nota: La etiqueta input no tiene apertura y cierre, por lo tanto
+ técnicamente no tiene contenido. Si para recoger el contenido de una
+  etiqueta con apertura y cierre utilizábamos innerHTML, para recoger
+   el valor de un input utilizaremos value.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Escribe algo aqui">
+    <button onclick="imprimir()" > Imprimir</button>
+
+    <script>
+        function imprimir(){
+            var dato=document.querySelector("input").value;
+            console.log("hola "+dato)
+        }
+
+    </script>
+    
+</body>
+</html>

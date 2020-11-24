@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: #ffcc00;
+    }
+
+</style>
+<body>
+    <h1>:)</h1>
+    <p>es aleatorio debe presionar varias veces</p>
+    <select>
+        <option value="">Seleccione uno</option selected disabled>
+        <option value=":)">:)</option>
+        <option value=":(">:(</option>
+    </select>
+    <button>actualizar</button>   
+</body>
+<script>
+    var btn=document.querySelector("button");
+    function random(min,max) {
+        return Math.floor((Math.random() * (max - min + 1)) + min);
+        
+    }
+    function get(){
+        var cuerpo= document.querySelector("body").style;
+        var elem= document.querySelector("select").selectedIndex;
+        elem=document.querySelector("select").options[elem].value;
+        var elh1= document.querySelector("h1");
+        var aleatorio=random(1,100);
+        if (elem===":)" && aleatorio % 2===0){
+            cuerpo.backgroundColor="#ffcc00";
+            elh1.innerHTML=elem;
+        }
+        if(elem===":(" && aleatorio % 2===1){
+            cuerpo.backgroundColor="#ff9900";
+            elh1.innerHTML=elem;
+        }
+    }   
+    btn.onclick=get;
+
+</script>
+</html>

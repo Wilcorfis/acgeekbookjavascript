@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var precio=10;
+        var iva=2.1;
+        var calculo=(precio,iva) =>{
+            var acum=(precio*iva)/10+precio;
+            return "precio sin iva= " +precio+" ,  iva= "+iva+" ,  total= "+acum;
+            
+        }
+        document.writeln(calculo(precio,iva));
+    </script>
+    
+</body>
+</html>

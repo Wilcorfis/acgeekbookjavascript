@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input placeholder="ej. agileinnova">
+    <button onclick="mostrar()">Buscar</button>
+    <h1>resultados</h1>
+    <ul></ul>
+
+    <script>
+        function mostrar() {
+            var orga = document.querySelector('input').value;
+
+            fetch(`https://api.github.com/orgs/${orga}`)
+                .then(OrgaR=> OrgaR.json())
+                .then(OrgData => {
+                    const url = OrgData.repos_url;
+                    return fetch(url);
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const ul = document.querySelector('ul');
+                    const lista = data;
+                    let ulContent = '';
+
+                    for (const dato of lista) {
+                        const Content = `<li>${dato.name}</li>`;
+                        ulContent += Content;
+                    }
+                    ul.innerHTML = ulContent;
+                });
+        }
+
+    </script>
+</body>
+
+</html>

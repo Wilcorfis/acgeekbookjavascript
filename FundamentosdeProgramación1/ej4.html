@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>La geek seleccionada es :</h1>
+    <ul>
+        <li>Lola</li>
+        <li>wilmer</li>
+    </ul>
+    <script>
+        var element= document.querySelector("h1").innerText;
+        var element2 = document.querySelectorAll("li");
+    
+        element+=element2.item(0).innerHTML;
+        document.querySelector("h1").innerText=element;
+    </script>
+    
+</body>
+</html>

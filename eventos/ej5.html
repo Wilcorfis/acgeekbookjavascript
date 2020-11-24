@@ -1,0 +1,101 @@
+<!--
+    Favoritos
+Hemos preparado un HTML con tres tarjetas. Al pinchar en un elemento del listado tenemos que:
+En el li añadir la clase .teacher--selected si no la tiene, o quitarla si la tiene.
+Modificar el texto del span .favorite sustituyéndolo por 'Quitar' si en ese momento contiene 
+'Añadir', o por 'Añadir' si contiene 'Quitar'.
+Nota 1: con querySelector buscamos un elemento dentro de otro. Hasta ahora lo habíamos
+ usado para buscar dentro de document (todo nuestro documento HTML), 
+ con document.querySelector().
+Si tuviéramos una constante llamada, por ejemplo, sectionAboutElement en la que hemos guardado
+ un elemento de HTML, podríamos buscar dentro de este otro elemento, tal que así 
+ sectionAboutElement.querySelector()
+Nota 2: para facilitar añadir y quitar clases de CSS, os recomendamos usar classList.toggle
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, san-serif;
+    }
+
+    .teachers {
+        list-style: none;
+        padding: 0;
+    }
+
+    .teacher {
+        display: inline-block;
+        cursor: pointer;
+        padding: 20px;
+    }
+
+    .teacher__img {
+        width: 200px;
+        height: auto;
+    }
+
+    .teacher--selected {
+        background-color: antiquewhite;
+    }
+</style>
+
+<body>
+    <ul class="teachers">
+        <li class="teacher teacher--isra">
+            <div>Isra</div>
+            <img class="teacher__img"
+                src="https://pbs.twimg.com/profile_images/1043753095354875904/Y-7P5ReE_400x400.jpg" />
+            <div class="favorite">Añadir</div>
+        </li>
+        <li class="teacher teacher--tuerto">
+            <div>¿Barlos?</div>
+            <img class="teacher__img"
+                src="https://pbs.twimg.com/profile_images/1152838187586326529/ukeU3ydJ_400x400.png" />
+            <div class="favorite">Añadir</div>
+        </li>
+        <li class="teacher teacher--nasi">
+            <div>Nasi</div>
+            <img class="teacher__img"
+                src="https://pbs.twimg.com/profile_images/1043589031324528641/v4Ccv02i_400x400.jpg" />
+            <div class="favorite">Añadir</div>
+        </li>
+    </ul>
+    <script>
+        const controls = document.querySelectorAll('.teachers > li');
+        [].forEach.call(controls, el => {
+            el.addEventListener('click', btnClick, false)
+        })
+
+        function btnClick() {
+            [].forEach.call(controls, el => {
+                if (el !== this) el.classList.remove('teacher--selected');
+            });
+            this.classList.toggle('teacher--selected');
+        }
+        /////////////////////////////////////////////////////
+        const controls2 = document.querySelectorAll('.teacher > .favorite');
+        [].forEach.call(controls2, el => {
+            el.addEventListener('click', btnClick2, false)
+        })
+
+        function btnClick2() {  
+            this.innerHTML === "Quitar" ? this.innerHTML="Añadir" :this.innerHTML="Quitar";
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!--Jugando con el teclado
+Tenemos que crear una página vacía. Al pulsar la tecla
+'r' su color de fondo cambia a rojo y al pulsar la 'm' a morado.
+Vamos a escuchar un evento de teclado (directamente sobre el elemento document).
+En el evento podemos consultar la propiedad key para saber qué tecla se ha pulsado.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="color" onkeypress="myFunction(event)">
+    <script>
+        function myFunction(event) {
+            var x = event.keyCode;//table asscii
+            if (x === 114) {
+                document.getElementById("color").style.backgroundColor = "red";
+
+            }
+            if (x === 109) {
+                document.getElementById("color").style.backgroundColor = "purple";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

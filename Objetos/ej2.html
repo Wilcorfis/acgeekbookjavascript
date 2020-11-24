@@ -1,0 +1,44 @@
+<!--
+    A la carrera
+Partiendo del objeto geekGirl1 del ejercicio anterior, 
+añade un método (una función) run que muestre en la consola 
+la frase 'Estoy corriendo'.
+Ahora, vamos a añadir un nuevo método runAMarathon que toma un parámetro
+ distance que es un número. Al ejecutarlo, debe mostrarse en la consola 
+ el texto 'Estoy corriendo un maratón de 50 kilómetros' siendo 50 el valor 
+ del argumento distance que le hemos pasado.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        var geekGirl1 = {
+            nombre: "Susana",
+            edad: "34 años",
+            cargo: "periodista",
+            run: function(){
+                console.log('Estoy corriendo');
+            },
+            runAMarathon: function(distance){
+                console.log(`Estoy corriendo un maratón de ${distance} kilómetros`);
+            }          
+        }
+        geekGirl1.run();
+        geekGirl1.runAMarathon(50);
+
+    </script>
+
+</body>
+
+</html>

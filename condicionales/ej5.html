@@ -1,0 +1,70 @@
+<!--
+    Notificaciones arcoiris
+Crea un div que contenga un título "NOTIFICACIÓN" y un texto 
+"Mensaje por defecto". Crea también tres clases:
+La primera, .success, aplicará un borde verde oscuro, un fondo verde claro 
+y el color de fuente verde oscuro
+La segunda, .error, igual pero sustituyendo el verde por rojo
+La tercera, .warning, lo mismo pero usando el color amarillo
+Usando JavaScript, haremos que:
+Si contiene la clase warning, el título sea 'AVISO' y el texto sea: 'Tenga cuidado'
+Si contiene la clase error, el título sea 'ERROR' y el texto sea: 'Ha surgido 
+un error'
+Si contiene la clase success, el título sea 'CORRECTO' y el texto sea: 
+'Los datos son correctos'
+Cambia la clase en HTML y comprueba que el código de JavaScript funciona.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success {
+            border: 1px green;
+            background-color: rgb(98, 216, 134);
+            color: black
+        }
+
+        .error {
+            border: rgb(245, 10, 10);
+            background-color: rgb(235, 121, 121);
+            color: black
+        }
+
+        .warning {
+            border:  rgb(228, 253, 0);
+            background-color: rgb(242, 247, 174);
+            color: black
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="titulo error">NOTIFICACION</h1>
+        <p class="parrafo error">Mensaje por defecto</p>
+    </div>
+    <script>
+        const activableSection = document.querySelector('.titulo');
+        const activableSection2 = document.querySelector('.parrafo');
+
+        if (activableSection.classList.contains('warning')) {
+            activableSection.innerHTML = 'AVISO'
+            activableSection2.innerHTML = 'Tenga cuidado'
+        }
+        if (activableSection.classList.contains('error')) {
+            activableSection.innerHTML = 'ERROR'
+            activableSection2.innerHTML = 'Ha surgido un error'
+        }
+        if (activableSection.classList.contains('success')) {
+            activableSection.innerHTML = 'CORRECTO'
+            activableSection2.innerHTML = 'Los datos son correctos'
+        } 
+    </script>
+</body>
+
+</html>

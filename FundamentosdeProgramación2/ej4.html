@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script>
+        function calcularPagos(personas, euros, personaPagademas) {
+            var Tpersona = personas - personaPagademas;
+            var Pagoana = euros / Tpersona;
+            var auxEuros = (euros  - Pagoana)/Tpersona;
+            return `${personaPagademas} personas pagan  ${Pagoana}  Y los otros ${Tpersona} pagan  ${auxEuros}`;
+
+        }
+        alert(calcularPagos(9,128,1));
+    </script>
+</body>
+
+</html>

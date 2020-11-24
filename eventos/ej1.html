@@ -1,0 +1,29 @@
+<!--Hola click
+Crear una página HTML con un párrafo en el que ponga Hola y un botón.
+ Usando JavaScript, cambiar ese texto por "Mi primer click, ¡ole yo y
+  la mujer que me parió!" cuando se pulse el botón.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="select">Hola</p>
+    <button onclick="cambiar()">cambiar</button>
+    <script>
+        function cambiar() {
+            var elem = document.querySelector("#select");
+            elem.innerHTML='Mi primer click ¡ole yo y la mujer que me parió!';
+
+        }
+
+    </script>
+</body>
+
+</html>

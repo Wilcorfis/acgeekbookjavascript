@@ -1,0 +1,50 @@
+<!--
+La raza del perro
+Vamos a realizar un ejercicio con la API de 'https://dog.ceo/dog-api/'
+ y la api de 'https://rand.fun/'. Tenemos que pedir un listado de razas de perros,
+  y con un número aleatorio elegir una raza del listado:
+pintar un mensaje que muestre la raza elegida al azar. 
+pedir una imagen aleatoria de un perro de esa raza y pintarla.
+Si has llegado hasta aquí te proponemos otro reto, intenta que la última función sea la 
+única que se encargue de interactuar con html, y sea esta la que pinte la raza y la imagen. ¡Al turrón!
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img />
+    <h1></h1>
+    <script>
+        fetch('https://dog.ceo/api/breeds/list/all')
+            .then(breedsResponse => breedsResponse.json())
+            .then(breedsData => {
+                var breeds = Object.keys(breedsData.message)
+                return [fetch(`https://api.rand.fun/number/integer?min=0&max=${breeds.length}`)//multiple fetch
+                    .then(response => response.json())
+                    .then(data => {
+                        const h = document.querySelector('h1');
+                        h.innerText = breeds[data.result];
+                        fetch(`https://dog.ceo/api/breed/${breeds[data.result]}/images/random`)
+                            .then(imageResponse => imageResponse.json())
+                            .then(imageData => {
+                                const img = document.querySelector('img');
+                                img.src = imageData.message;
+                            });
+
+
+                    })
+
+                    , breeds];
+            })
+    </script>
+
+</body>
+
+</html>

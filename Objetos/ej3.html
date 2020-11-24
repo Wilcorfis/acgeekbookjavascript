@@ -1,0 +1,52 @@
+<!--
+    Bio de Geek Girls 2
+Partiendo del objeto geekGirl1 del ejercicio anterior, añade un método 
+(una función) showBio que muestra una ventana de alerta con la frase 
+'Mi nombre es María, tengo 34 años y soy periodista', usando el nombre, edad 
+y estudios que están almacenados en el objeto.
+Hacemos lo mismo para geekGirl2. ¿Hemos tenido que modificar mucho el método showBio? 
+¿Ves alguna ventaja respecto a cómo hacíamos lo mismo en el ejercicio 1?
+Nota: para que el ejercicio funcione bien debéis usar funciones normales, no arrow funtions.
+ En siguientes sesiones veremos por qué cambia el this al usar arrow funtions.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        var geekGirl1 = {
+            nombre: "Susana",
+            edad: "34 años",
+            cargo: "periodista",
+            showBio: function () {
+                alert(`Mi nombre es ${this.nombre}, tengo ${this.edad} y soy ${this.cargo}`);               
+            }
+
+        }
+        var geekGirl2 = {
+            nombre: "Rocio",
+            edad: "25 años",
+            cargo: "actriz",
+            showBio: function () {
+                alert(`Mi nombre es ${this.nombre}, tengo ${this.edad} y soy ${this.cargo}`);               
+            }
+        }
+        geekGirl1.showBio();
+        geekGirl2.showBio();
+
+
+    </script>
+
+</body>
+
+</html>

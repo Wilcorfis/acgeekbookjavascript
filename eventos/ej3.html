@@ -1,0 +1,35 @@
+<!--EJERCICIO 3
+Dame ipsum
+Crear una página HTML con un párrafo con lorem ipsum. 
+Al poner el ratón sobre el párrafo, vamos a añadir un 
+nuevo párrafo a la página con lorem ipsum.-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <p id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae e
+            veniet nihil id neque repellendus consequuntur iusto reiciendis, cu
+            piditate itaque placeat quidem ad error saepe. Rerum iure at deleni
+            ti maxime in!</p>
+    </div>
+    <script>
+        document.getElementById("demo").addEventListener("mouseover", addElement);
+
+
+        function addElement() {
+            document.getElementById("demo").innerHTML += `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae e
+            veniet nihil id neque repellendus consequuntur iusto reiciendis, cu
+            piditate itaque placeat quidem ad error saepe. Rerum iure at deleni
+            ti maxime in!</p>`;
+        }
+    </script>
+</body>
+
+</html>

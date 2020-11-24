@@ -1,0 +1,38 @@
+<!--
+    Cazando errores 1
+Partiendo del ejercicio 1 vamos a modificarlo para en lugar de parsear la respuesta a JSON 
+(response.json()) lo hagamos a html (response.html()). Ahora si abrimos la consola del navegador 
+nos encontraremos un mensaje de error, léelo para familiarizarte con él.
+Este error nos indica que ha sucedido un error en una de las promesas y que no lo hemos cazado, 
+también nos da algo de información sobre el error. En este caso hemos intentado parsear a html 
+la respuesta de la api de rand.fun que solo es parseable a JSON.
+Vamos a ponerle un catch a nuestra promesa y a loguear el error.
+Puede ser que tras este ejercicio no notes mucha diferencia entre el error que mostraba el navegador
+ y nuestro console.log. Pero tener nuestros errores controlados es muy importante, aunque a día de hoy 
+ no vayamos a hacer nada más que loguear el error, ya tenemos el código preparado para en un futuro hacer otras cosas como:
+Mostrar feedback a la usuaria sobre lo que ha ocurrido.
+Intentar realizar la petición de nuevo pasados unos segundos en caso de errores por falta de conexión.
+Mandar información sobre el error a un servicio que lo almacene para después investigarlo.
+Nota: los mensajes de error en la consola del navegador no solo nos indican errores en las promesas,
+ aparecen cada vez que hacemos algo que no debemos, aunque a estas alturas ya debes haberte dado cuenta.
+  A partir de ahora NUNCA deberías dejar un mensaje de error ignorado, aunque en tu mente sepas que es por
+   una tontería y pienses solucionarlo más tarde. Los errores en JavaScript hacen que nuestro código sea muy
+    frágil, y pueden hacer que toda una lógica se rompa.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch('https://api.rand.fun/number/integer?min=0&max=20')
+            .then(response => response.html())
+            .then(data => document.body.innerHTML = data.result)
+            .catch(error => console.log(`Ha sucedido un error: ${error}`));
+    </script>
+</body>
+</html>

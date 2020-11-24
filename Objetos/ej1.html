@@ -1,0 +1,44 @@
+<!--Bio de Geek Girls
+Crea un nuevo objeto en JavaScript geekGirl1 que nos sirva para representar 
+(modelar) a una Geek Girl. Tenemos estos datos:
+Susana, 34 años, periodista
+Luego muestra en la web una frase como esta, accediendo a los datos del objeto:
+'Mi nombre es Susana, tengo 34 años y soy periodista'
+Ahora hacemos lo mismo (crear el objeto geekGirl2 y mostrar una frase descriptiva)
+ con una nueva Geek Girl con estos datos:
+Rocío, 25 años, actriz-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        var geekGirl1 = {
+            nombre: "Susana",
+            edad: "34 años",
+            cargo: "periodista"
+
+        }
+        var geekGirl2 = {
+            nombre: "Rocio",
+            edad: "25 años",
+            cargo: "actriz"
+        }
+        var elemet1=`Mi nombre es ${geekGirl1.nombre}, tengo ${geekGirl1.edad} y soy ${geekGirl1.cargo}`;
+        var elemet2=`Mi nombre es ${geekGirl2.nombre}, tengo ${geekGirl2.edad} y soy ${geekGirl2.cargo}`;
+         document.querySelector("div").innerText+=elemet1+"\n"+elemet2;
+
+    </script>
+
+</body>
+
+</html>

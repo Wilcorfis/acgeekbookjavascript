@@ -1,0 +1,33 @@
+<!--
+    Investigando event
+Tenemos que preparar un botón con un listener para loguear el objeto 
+event en la consola. Investigar si la clave type que encontramos en él 
+es una propiedad o un método.
+Nota: cuando logueamos un objeto en la consola, a su izquierda aparece un
+ triangulo que nos permite desplegarlo para ver sus métodos y propiedades.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>boton preparado</h1>
+    <button onclick="logear(event)" >Enviar</button>
+
+
+
+    <script>
+        function logear(e) {
+            console.log(e);
+            // estamos trabajando sobre un objeto type es una propiedad
+            //type: "click" propiedad de mouseEvent
+        }
+   
+        
+    </script>
+    
+</body>
+</html>

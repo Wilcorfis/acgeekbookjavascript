@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="element"></div>
+
+    <script>
+        const element = document.querySelector('#element');
+        const com = "lola";
+        
+        element.innerHTML = '\
+<div class="popup">\
+  <span>hola ' + com + ' encantada de conocerte</span>\
+</div>';
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        var titulo = document.createElement("h1");
+        var imagen = document.createElement("img");
+        var parra = document.createElement("p");
+        parra.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
+        imagen.src="http://via.placeholder.com/350x150";
+        titulo.innerHTML = "Lorem ipsum";   
+        document.querySelector("div").appendChild(titulo);
+        document.querySelector("div").appendChild(imagen);
+        document.querySelector("div").appendChild(parra);
+
+    </script>
+</body>
+</html>
